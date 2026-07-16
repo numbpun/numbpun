@@ -1,0 +1,118 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Animated terminal typing Uddhav Jain and fixing a bug</title>
+  <desc id="desc">A minimalist black and neon retro terminal. A keyboard types Uddhav Jain, a red squiggly underline appears, and the line resolves to fixed.</desc>
+  <defs>
+    <linearGradient id="screenGlow" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050505"/>
+      <stop offset="0.52" stop-color="#07100D"/>
+      <stop offset="1" stop-color="#050510"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="74" y1="32" x2="1126" y2="328" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39FF14"/>
+      <stop offset="0.48" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#FF3B57"/>
+    </linearGradient>
+    <pattern id="scanlines" width="1" height="8" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="#FFFFFF" fill-opacity="0.055"/>
+    </pattern>
+    <filter id="softGreen" x="-80" y="-80" width="1360" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      .typed { font-size: 70px; font-weight: 800; fill: #F8F8F2; filter: url(#softGreen); }
+      .prompt { font-size: 18px; font-weight: 700; fill: #39FF14; }
+      .muted { font-size: 15px; fill: #8D8D8D; }
+      .caret { animation: caretBlink 1s steps(1) infinite; }
+      .type-name { animation: typeName 8s steps(11) infinite; }
+      .squiggle { stroke-dasharray: 290; stroke-dashoffset: 290; animation: underlineBug 8s ease-in-out infinite; }
+      .fix-line { animation: fixLine 8s ease-in-out infinite; }
+      .error-line { animation: errorLine 8s ease-in-out infinite; }
+      .key-a { animation: keyPressA 8s ease-in-out infinite; transform-origin: center; }
+      .key-b { animation: keyPressB 8s ease-in-out infinite; transform-origin: center; }
+      .key-c { animation: keyPressC 8s ease-in-out infinite; transform-origin: center; }
+      .key-d { animation: keyPressD 8s ease-in-out infinite; transform-origin: center; }
+      .pulse { animation: pulse 2.4s ease-in-out infinite; }
+      @keyframes caretBlink { 0%, 52% { opacity: 1; } 53%, 100% { opacity: 0; } }
+      @keyframes typeName {
+        0%, 7% { clip-path: inset(0 100% 0 0); }
+        38%, 83% { clip-path: inset(0 0 0 0); }
+        100% { clip-path: inset(0 100% 0 0); }
+      }
+      @keyframes underlineBug {
+        0%, 38% { stroke-dashoffset: 290; opacity: 0; }
+        45%, 60% { stroke-dashoffset: 0; opacity: 1; }
+        70%, 100% { stroke-dashoffset: 290; opacity: 0; }
+      }
+      @keyframes errorLine {
+        0%, 42% { opacity: 0; transform: translateY(8px); }
+        48%, 62% { opacity: 1; transform: translateY(0); }
+        72%, 100% { opacity: 0; transform: translateY(-4px); }
+      }
+      @keyframes fixLine {
+        0%, 60% { opacity: 0; transform: translateY(6px); }
+        70%, 92% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-4px); }
+      }
+      @keyframes keyPressA { 8%, 13% { transform: translateY(5px); fill: #39FF14; } 0%, 20%, 100% { transform: translateY(0); fill: #0B0B0B; } }
+      @keyframes keyPressB { 18%, 24% { transform: translateY(5px); fill: #00E5FF; } 0%, 30%, 100% { transform: translateY(0); fill: #0B0B0B; } }
+      @keyframes keyPressC { 29%, 35% { transform: translateY(5px); fill: #39FF14; } 0%, 40%, 100% { transform: translateY(0); fill: #0B0B0B; } }
+      @keyframes keyPressD { 67%, 74% { transform: translateY(5px); fill: #FF3B57; } 0%, 78%, 100% { transform: translateY(0); fill: #0B0B0B; } }
+      @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) {
+        .caret, .type-name, .squiggle, .fix-line, .error-line, .key-a, .key-b, .key-c, .key-d, .pulse { animation: none; }
+        .type-name { clip-path: none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="24" fill="url(#screenGlow)"/>
+  <rect width="1200" height="360" rx="24" fill="url(#scanlines)"/>
+  <rect x="54" y="34" width="1092" height="292" rx="18" fill="#050505" fill-opacity="0.88" stroke="url(#edge)" stroke-width="2"/>
+  <rect x="78" y="58" width="1044" height="180" rx="10" fill="#020202" stroke="#1B1B1B"/>
+
+  <g>
+    <circle cx="102" cy="82" r="5" fill="#FF3B57"/>
+    <circle cx="122" cy="82" r="5" fill="#FFD166"/>
+    <circle class="pulse" cx="142" cy="82" r="5" fill="#39FF14"/>
+  </g>
+
+  <text x="104" y="120" class="mono prompt">$ run ./whoami</text>
+  <g transform="translate(104 172)">
+    <text class="mono typed type-name" x="0" y="0">Uddhav Jain</text>
+    <rect class="caret" x="492" y="-55" width="12" height="70" rx="2" fill="#39FF14"/>
+    <path class="squiggle" d="M302 22C316 8 330 36 344 22C358 8 372 36 386 22C400 8 414 36 428 22C442 8 456 36 470 22C484 8 498 36 512 22" stroke="#FF3B57" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g class="error-line">
+    <text x="104" y="222" class="mono" fill="#FF3B57" font-size="18">error: name unresolved at cursor</text>
+  </g>
+  <g class="fix-line">
+    <text x="104" y="222" class="mono" fill="#39FF14" font-size="18">fixed: Uddhav Jain // systems student</text>
+  </g>
+
+  <g transform="translate(740 118)">
+    <rect x="0" y="0" width="318" height="152" rx="14" fill="#080808" stroke="#262626"/>
+    <rect class="key-a" x="26" y="28" width="54" height="36" rx="7" stroke="#39FF14"/>
+    <rect class="key-b" x="90" y="28" width="54" height="36" rx="7" stroke="#00E5FF"/>
+    <rect class="key-c" x="154" y="28" width="54" height="36" rx="7" stroke="#39FF14"/>
+    <rect x="218" y="28" width="54" height="36" rx="7" fill="#0B0B0B" stroke="#3A3A3A"/>
+    <rect x="48" y="76" width="54" height="36" rx="7" fill="#0B0B0B" stroke="#3A3A3A"/>
+    <rect class="key-d" x="112" y="76" width="128" height="36" rx="7" stroke="#FF3B57"/>
+    <text x="50" y="52" class="mono" fill="#F8F8F2" font-size="13">U</text>
+    <text x="114" y="52" class="mono" fill="#F8F8F2" font-size="13">D</text>
+    <text x="178" y="52" class="mono" fill="#F8F8F2" font-size="13">J</text>
+    <text x="238" y="52" class="mono" fill="#8D8D8D" font-size="13">;</text>
+    <text x="70" y="100" class="mono" fill="#8D8D8D" font-size="13">esc</text>
+    <text x="150" y="100" class="mono" fill="#F8F8F2" font-size="13">fix bug</text>
+  </g>
+
+  <path d="M78 260H1122" stroke="#39FF14" stroke-opacity="0.18"/>
+  <text x="92" y="292" class="mono muted">minimal profile boot</text>
+  <text x="500" y="292" class="mono muted">black / neon / retro terminal</text>
+  <text x="948" y="292" class="mono muted">trace, test, repair</text>
+</svg>
