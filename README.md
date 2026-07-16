@@ -75,8 +75,8 @@ const uddhav = {
 ### GitHub signal
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=numbpun&show_icons=true&hide_border=true&bg_color=00000000&title_color=F2D78A&text_color=F7E7B0&icon_color=8DB7FF&ring_color=F2D78A" alt="Uddhav Jain GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=numbpun&layout=compact&hide_border=true&bg_color=00000000&title_color=F2D78A&text_color=F7E7B0" alt="Uddhav Jain top languages" />
+  <img width="430" src="https://github-readme-stats.vercel.app/api?username=numbpun&show_icons=true&hide_border=true&bg_color=0B1638&title_color=F2D78A&text_color=F7E7B0&icon_color=8DB7FF&ring_color=F2D78A" alt="Uddhav Jain GitHub stats" />
+  <img width="330" src="https://github-readme-stats.vercel.app/api/top-langs/?username=numbpun&layout=compact&hide_border=true&bg_color=0B1638&title_color=F2D78A&text_color=F7E7B0" alt="Uddhav Jain top languages" />
 </p>
 
 <div align="center">
