@@ -1,0 +1,30 @@
+<svg width="1200" height="88" viewBox="0 0 1200 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+  <defs>
+    <linearGradient id="dividerLine" x1="120" y1="44" x2="1080" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1638" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#8DB7FF"/>
+      <stop offset="0.5" stop-color="#F2D78A"/>
+      <stop offset="0.8" stop-color="#8DB7FF"/>
+      <stop offset="1" stop-color="#0B1638" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="0" y="0" width="1200" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="88" fill="none"/>
+  <path d="M130 44H386C405 44 405 24 424 24H500C520 24 520 64 540 64H660C680 64 680 24 700 24H776C795 24 795 44 814 44H1070" stroke="url(#dividerLine)" stroke-width="2" stroke-linecap="round" filter="url(#softGlow)"/>
+  <circle cx="424" cy="24" r="5" fill="#F2D78A">
+    <animate attributeName="opacity" values="0.45;1;0.45" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="540" cy="64" r="5" fill="#8DB7FF">
+    <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="24" r="5" fill="#F7E7B0">
+    <animate attributeName="opacity" values="0.35;1;0.35" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="776" cy="24" r="4" fill="#8DB7FF"/>
+</svg>
